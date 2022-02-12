@@ -1,7 +1,6 @@
 from distutils import command
-import tkinter as tk
+#import tkinter as tk
 from tkinter import *
-from tkinter.tix import LabelEntry
 class Data:
     """The database for the code, this contains the dictionary."""
     def __init__(self):
@@ -33,7 +32,8 @@ class Data:
         "6":["4* Teas", 445500, 107.5, 4455]
         }
         srch = str(search)
-        self.data = materials[srch]
+        if srch != "0":
+            self.data = materials[srch]
     def name(self):
         """Gets the name from self.data
         Returns:
@@ -67,8 +67,9 @@ class Data:
         Returns:
             Nothing
         """
-        root = tk.Tk()
-        name = Label(text=f"Group Name: {nm}", height=2, width=40, font=("Arial", 50))
+        root = Tk()
+        root.geometry("1000x800+100+100")
+        name = Label(text=f"Group Name: {nm}", height=2, width=40, font=("Arial", 50), )
         name.pack()
         gold = Label(text=f"Renown/Time: {rnt}", height=2, width=40, font=("Arial", 50))
         gold.pack()
@@ -78,9 +79,11 @@ class Data:
         renown.pack()
         total_gold = Label(text=f"Total Gold: {munny}", height=2, width=40, font=("Arial", 50))
         total_gold.pack()
-        qt = Button(root, text="Next", font=("Arial", 50), command= lambda:root.destroy())
-        qt.pack()
+        nxt = Button(root, text="Next", font=("Arial", 50), command= lambda:root.destroy())
+        nxt.pack()
         ex = Button(root, text="Exit", font=("Arial", 50), command= lambda:quit())
         ex.pack()
         root.mainloop()
-#Data.otpt("", "young", 900, 152, 500)
+
+        
+#Data.otpt("", "young", 900, 152, 500, 1500000)
