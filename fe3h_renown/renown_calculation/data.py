@@ -62,7 +62,7 @@ class Data:
         """
         renown = self.data[3]
         return renown
-    def otpt(self, nm, rnt, rng, glt):
+    def otpt(self, nm, rnt, rng, glt, munny):
         """displays information to tkinter
         Returns:
             Nothing
@@ -76,6 +76,8 @@ class Data:
         time.pack()
         renown = Label(text=f"Gold/Time: {glt}", height=2, width=40, font=("Arial", 50))
         renown.pack()
+        total_gold = Label(text=f"Total Gold: {munny}", height=2, width=40, font=("Arial", 50))
+        total_gold.pack()
         qt = Button(root, text="Next", font=("Arial", 50), command= lambda:root.destroy())
         qt.pack()
         ex = Button(root, text="Exit", font=("Arial", 50), command= lambda:quit())

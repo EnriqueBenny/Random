@@ -39,5 +39,5 @@ class Director:
 
     def send(self):
         """sends everything to tkinter to output"""
-        Data.otpt(self, self.name, self.rnwn_tm, self.rnwn_gld, self.gld_tm)
+        Data.otpt(self, self.name, self.rnwn_tm, self.rnwn_gld, self.gld_tm, self.gold)
         self.counter += 1
