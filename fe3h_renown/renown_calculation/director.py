@@ -2,8 +2,19 @@ from renown_calculation.calculate import Calculate
 from renown_calculation.data import Data
 class Director:
     """Director class, represents user."""
+    
     def __init__(self):
         """initiates the Dirctor class to represent the user.
+        Args:
+            name (str): group names
+            gold (int): total gold cost for the group
+            time (float): time taken for each group
+            renown (int): renown earned from the group in a single loop.
+            rnwn_tm (float): renown / time
+            rnwn_gld (float): renown / gold
+            gld_tm (float): gold / time
+            counter (int): the counter that tracks the while loop and
+            searches the dictionary in the Data class.
         """
         self.name = ""
         self.gold = 0
@@ -13,6 +24,7 @@ class Director:
         self.rnwn_gld = 0
         self.gld_tm = 0
         self.counter = 1
+
     def start(self):
         """starts the code"""
         while self.counter < 7:
@@ -24,6 +36,8 @@ class Director:
         """searches for the different values
         Returns:
             Nothing
+        Args:
+            name (str): group name
         """
         data = Calculate.set_var(self, self.counter)
         self.name = data[0]
@@ -38,6 +52,6 @@ class Director:
         self.gld_tm = Calculate.gold_time(self, self.gold, self.time)
 
     def send(self):
-        """sends everything to tkinter to output"""
+        """sends everything to tkinter in Data.otpt()"""
         Data.otpt(self, self.name, self.rnwn_tm, self.rnwn_gld, self.gld_tm, self.gold)
         self.counter += 1
