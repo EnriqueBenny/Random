@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy import arange, array
+from numpy import arange
 
 
 class Plotter():
